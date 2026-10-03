@@ -72,7 +72,26 @@ button{font:inherit;cursor:pointer}
 .hero .names{color:#c0392b}
 .hero strong{color:#8e1b1b;font-weight:600;font-size:22px}
 .hero .lead{margin-top:.9em;text-wrap:balance}
+.hero .bride{margin:0 0 .9em}
+.hero .bride strong{font-size:24px}
 .hero .hash{color:#b5832f;margin-top:.5em;font-size:24px}
+.hero .couple{font:inherit;margin:.55em 0 .8em}
+.couple .partner,.couple .names,.couple .parents,.couple .amp{display:block}
+.couple .names{margin:0;line-height:1.08}
+.couple .parents{font-size:17px;font-style:italic;line-height:1.3;margin-top:.15em}
+.hero .couple .parents strong{display:block;font-style:normal;font-size:21px;line-height:1.3}
+.couple .amp{font-size:clamp(42px,10vw,60px);color:#b5832f;line-height:1;margin:.3em 0 .05em}
+.couple .hon{font-family:"Cormorant Garamond",serif;font-size:.26em;font-weight:600;letter-spacing:.04em;margin-right:.3em;vertical-align:.6em;color:#8e1b1b}
+.couple .rise{opacity:0}
+.page.in .couple .rise{animation:up .9s forwards;animation-delay:var(--d,0s)}
+.page.in .seq.late>*{animation-delay:calc(var(--i)*.14s + 2.7s)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media (min-width:700px){
+  .hero .couple{display:grid;grid-template-columns:1fr auto 1fr;align-items:start;column-gap:.6em;margin-inline:calc(50% - min(47vw,410px))}
+  .hero .couple .names{font-size:clamp(66px,10vw,104px)}
+  .couple .amp{font-size:clamp(54px,8vw,84px);line-height:1.3;margin:0}
+}
+@media (max-width:500px){.hero .vine{width:118px}}
 .sun{position:absolute;left:50%;top:9%;width:340px;height:340px;margin-left:-170px;border-radius:50%;background:radial-gradient(circle,#fffbe8 0%,rgba(255,244,200,.6) 35%,rgba(255,244,200,0) 70%);animation:breathe 6s ease-in-out infinite;z-index:0}
 
 /* story */
@@ -89,13 +108,15 @@ button{font:inherit;cursor:pointer}
 
 /* sangeet */
 .sangeet{background:linear-gradient(#0f0b2e 0%,#241a5c 55%,#3d2a7a 100%);color:#f4ecff}
-.sangeet .fnname{color:#ffb347}
+.sangeet .fnname{color:#ffb347;font-size:clamp(56px,12vw,112px);line-height:1.05}
+.sangeet .subtitle{text-wrap:balance;font-size:20px;font-style:italic;color:#ffd9a0;margin:-.1em 0 .6em}
 .sangeet .content{padding-top:24vh}
 .moon{position:absolute;top:13%;right:12%;width:64px;height:64px;border-radius:50%;box-shadow:inset -16px 6px 0 #fff1c9;z-index:1;animation:float 7s ease-in-out infinite}
 
 /* haldi */
 .haldi{background:linear-gradient(#fff8d6 0%,#fdf3c4 45%,#e6f5e3 100%);color:#3d4a1c}
-.haldi .fnname{color:#d98a00}
+.haldi .fnname{color:#d98a00;font-size:clamp(62px,13vw,120px);line-height:1.05}
+.haldi .subtitle{font-size:20px;font-style:italic;color:#8a6a10;margin:-.1em 0 .6em}
 .haldi .content{padding-top:22vh}
 .haldi .dress{color:#6a5acd}
 
@@ -111,6 +132,13 @@ button{font:inherit;cursor:pointer}
 .close{background:radial-gradient(ellipse at 50% 40%,#a52a22,#6e1212);color:var(--paper)}
 .close .content{padding:26vh 0 30vh}
 .close .fnname{color:var(--gold);font-size:clamp(58px,12vw,104px)}
+.rsvp{margin:1.3em auto .4em;padding:1.1em 1em 1.2em;max-width:420px;border:1px solid rgba(217,164,65,.6);border-radius:18px;background:rgba(0,0,0,.14)}
+.rsvp-h{font-family:"Cinzel","Cormorant Garamond",serif;font-weight:600;letter-spacing:.32em;color:var(--gold);font-size:22px;padding-left:.32em}
+.rsvp-sub{font-style:italic;font-size:17px;opacity:.85;margin-bottom:.5em}
+.rsvp-names{font-size:21px;font-weight:600;line-height:1.45}
+.rsvp-home{font-size:17px;margin-top:.7em;opacity:.9}
+.rsvp-tel{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:.7em}
+.rsvp-tel .map{margin:0;color:var(--gold)}
 
 /* player */
 .player{margin:1.4em auto 0;display:inline-flex;align-items:center;gap:14px;text-align:left}
@@ -150,7 +178,7 @@ button{font:inherit;cursor:pointer}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before{animation:none!important;transition:none!important}
-  .seq>*,.type .ch{opacity:1;filter:none}.stem{stroke-dashoffset:0}.pop{transform:none}
+  .seq>*,.type .ch,.couple .rise{opacity:1;filter:none}.stem{stroke-dashoffset:0}.pop{transform:none}
 }
 
 #musicBtn{position:fixed;right:16px;bottom:16px;z-index:15;width:52px;height:52px;border-radius:50%;border:1.5px solid var(--gold);background:rgba(142,27,27,.9);color:#fbf3e4;display:none;place-items:center;font-size:22px}
@@ -244,14 +272,19 @@ button{font:inherit;cursor:pointer}
   <div class="content">
     <div class="seq">
       <p class="deva">॥ श्री गणेशाय नमः ॥</p>
-      <p class="eyebrow">With the blessings of<br><strong>Sri Devki Nandan<br>and Shrimati Mala Rani</strong></p>
-      <p class="lead"><strong>Mr. Deepak Mittal<br>and Mrs. Shweta Mittal</strong><br>request the pleasure of your company at the wedding of their son</p>
+      <p class="eyebrow">With the blessings of God</p>
+      <p class="lead"><strong>Shrimati Mala Rani<br>and Devki Nandan</strong><br>request the pleasure of your company at the wedding of their grandson</p>
     </div>
-    <h1 class="script names type">Yash &amp; Mansi</h1>
-    <div class="seq">
+    <h1 class="couple">
+      <span class="sr">Yash, son of Mrs. Shweta and Deepak, and Mansi, daughter of Mrs. Monica and Mukesh</span>
+      <span class="partner" aria-hidden="true"><span class="script names type" data-at=".9">Yash</span><span class="parents rise" style="--d:1.7s">son of<strong>Mrs. Shweta and Deepak</strong></span></span>
+      <span class="amp script rise" aria-hidden="true" style="--d:2s">&amp;</span>
+      <span class="partner" aria-hidden="true"><span class="script names type" data-at="2">Mansi</span><span class="parents rise" style="--d:2.9s">daughter of<strong>Mrs. Monica and Mukesh</strong></span></span>
+    </h1>
+    <div class="seq late">
       <div><div class="scratch" id="scratch"><p class="when">24 &amp; 25 October 2026</p><canvas tabindex="0" aria-label="Gold foil. Scratch it, or press Enter, to reveal the dates"></canvas></div><p class="scratch-hint" id="scratchHint">Scratch the gold to reveal the dates</p></div>
       <p>Rajputana Resort, Kalagarh Road, Dhampur</p>
-      <p>Join us for two days of music, turmeric and vows.</p>
+      <p>Join us for two days of rings, music, turmeric and vows.</p>
       <p class="hash deva">#आYashMan भव:</p>
     </div>
   </div>
@@ -289,12 +322,13 @@ button{font:inherit;cursor:pointer}
   <svg class="topdeco" data-lights viewBox="0 0 800 190" preserveAspectRatio="xMidYMin slice" aria-hidden="true"></svg>
   <div class="content">
     <p class="eyebrow seq"><span>Saturday, 24 October 2026</span></p>
-    <h2 class="script fnname type">Sangeet</h2>
+    <h2 class="script fnname type">Ring in the Beats</h2>
     <div class="seq">
+      <p class="subtitle">Sangeet and engagement: an evening of music, dance and the ring ceremony</p>
       <p class="when">7:00 pm onwards</p>
       <p class="where"><strong class="venue">Rajputana Resort</strong><br>Kalagarh Road, Dhampur</p>
-      <p><a class="map" href="https://www.google.com/maps/place/Rajputana+Resort+Hotel+%26+Restaurant/@29.3157981,78.5389376,17z/data=!3m1!4b1!4m9!3m8!1s0x390bc9c07c5ce7a5:0x3a2d13f7d9756096!5m2!4m1!1i2!8m2!3d29.3157981!4d78.5389376!16s%2Fg%2F11csrksy6c" target="_blank" rel="noopener">Get directions</a><a class="map" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Sangeet+%C2%B7+Yash+%26+Mansi&amp;dates=20261024T133000Z%2F20261024T183000Z&amp;location=Rajputana+Resort%2C+Kalagarh+Road%2C+Dhampur&amp;details=With+love+from+the+Mittal+family.+%23%E0%A4%86YashMan+%E0%A4%AD%E0%A4%B5%3A" target="_blank" rel="noopener">Add to calendar</a></p>
-      <p class="note">An evening of dance-offs, family performances and a dhol that won't stop until someone's uncle takes the floor.</p>
+      <p><a class="map" href="https://www.google.com/maps/place/Rajputana+Resort+Hotel+%26+Restaurant/@29.3157981,78.5389376,17z/data=!3m1!4b1!4m9!3m8!1s0x390bc9c07c5ce7a5:0x3a2d13f7d9756096!5m2!4m1!1i2!8m2!3d29.3157981!4d78.5389376!16s%2Fg%2F11csrksy6c" target="_blank" rel="noopener">Get directions</a><a class="map" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Ring+in+the+Beats+%28Sangeet+%26+Engagement%29+%C2%B7+Yash+%26+Mansi&amp;dates=20261024T133000Z%2F20261024T183000Z&amp;location=Rajputana+Resort%2C+Kalagarh+Road%2C+Dhampur&amp;details=With+love+from+the+Mittal+family.+%23%E0%A4%86YashMan+%E0%A4%AD%E0%A4%B5%3A" target="_blank" rel="noopener">Add to calendar</a></p>
+      <p class="note">Rings, family performances, dance-offs and a dhol that won't stop until someone's uncle takes the floor.</p>
       <p class="dress">Dress code: jewel tones and your best dancing shoes</p>
       <div><div class="player" data-song="sangeet"><button aria-label="Play the sangeet tune"></button><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="label">Sangeet tune<br><em>dholak and bansuri</em></div></div></div>
       <div><p class="taphint"><i aria-hidden="true"></i>Tap anywhere to join the dance</p></div>
@@ -314,11 +348,12 @@ button{font:inherit;cursor:pointer}
   <svg class="topdeco" data-garland="toran" viewBox="0 0 800 190" preserveAspectRatio="xMidYMin slice" aria-hidden="true"></svg>
     <div class="content">
     <p class="eyebrow seq"><span>Sunday, 25 October 2026</span></p>
-    <h2 class="script fnname type">Haldi</h2>
+    <h2 class="script fnname type">Rang De Mohe</h2>
     <div class="seq">
+      <p class="subtitle">The haldi ceremony</p>
       <p class="when">11:00 am onwards</p>
       <p class="where"><strong class="venue">Rajputana Resort</strong><br>Kalagarh Road, Dhampur</p>
-      <p><a class="map" href="https://www.google.com/maps/place/Rajputana+Resort+Hotel+%26+Restaurant/@29.3157981,78.5389376,17z/data=!3m1!4b1!4m9!3m8!1s0x390bc9c07c5ce7a5:0x3a2d13f7d9756096!5m2!4m1!1i2!8m2!3d29.3157981!4d78.5389376!16s%2Fg%2F11csrksy6c" target="_blank" rel="noopener">Get directions</a><a class="map" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Haldi+%C2%B7+Yash+%26+Mansi&amp;dates=20261025T053000Z%2F20261025T083000Z&amp;location=Rajputana+Resort%2C+Kalagarh+Road%2C+Dhampur&amp;details=With+love+from+the+Mittal+family.+%23%E0%A4%86YashMan+%E0%A4%AD%E0%A4%B5%3A" target="_blank" rel="noopener">Add to calendar</a></p>
+      <p><a class="map" href="https://www.google.com/maps/place/Rajputana+Resort+Hotel+%26+Restaurant/@29.3157981,78.5389376,17z/data=!3m1!4b1!4m9!3m8!1s0x390bc9c07c5ce7a5:0x3a2d13f7d9756096!5m2!4m1!1i2!8m2!3d29.3157981!4d78.5389376!16s%2Fg%2F11csrksy6c" target="_blank" rel="noopener">Get directions</a><a class="map" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Rang+De+Mohe+%28Haldi%29+%C2%B7+Yash+%26+Mansi&amp;dates=20261025T053000Z%2F20261025T083000Z&amp;location=Rajputana+Resort%2C+Kalagarh+Road%2C+Dhampur&amp;details=With+love+from+the+Mittal+family.+%23%E0%A4%86YashMan+%E0%A4%AD%E0%A4%B5%3A" target="_blank" rel="noopener">Add to calendar</a></p>
       <p class="note">Turmeric, marigolds and a lot of laughter as we begin the celebrations.</p>
       <p class="dress">Dress code: pastel colours, please avoid pink</p>
       <div><div class="player" data-song="haldi"><button aria-label="Play the haldi tune"></button><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="label">Haldi tune<br><em>folk claps and flute</em></div></div></div>
@@ -391,7 +426,13 @@ button{font:inherit;cursor:pointer}
       <div><div class="countdown" id="countdown"><div><b id="cd-d">00</b><span>days</span></div><div><b id="cd-h">00</b><span>hours</span></div><div><b id="cd-m">00</b><span>mins</span></div><div><b id="cd-s">00</b><span>secs</span></div></div>
       <p class="cd-label" id="cdLabel">until the pheras begin</p></div>
       <p>With love from both our families.</p>
-      <p>RSVP to Yash or Mansi.</p>
+      <div class="rsvp">
+        <p class="rsvp-h">RSVP</p>
+        <p class="rsvp-sub">Awaiting your presence</p>
+        <p class="rsvp-names">Devki Nandan, Shiv Kumar<br>Yogendra Kumar, Roshan Lal<br>Gopal Jain<br>Shweta &ndash; Deepak<br>Pragya &ndash; Pradeep<br>Nupur &ndash; Amit</p>
+        <p class="rsvp-home">Residence: Khatiyan Street, Dhampur (Bijnor)</p>
+        <p class="rsvp-tel"><a class="map" href="tel:+919557036676">Call 95570 36676</a><a class="map" href="tel:+919897744131">Call 98977 44131</a></p>
+      </div>
       <p class="deva" style="color:var(--gold);margin-top:1em">#आYashMan भव:</p>
     </div>
   </div>
@@ -483,8 +524,14 @@ document.querySelectorAll('[data-lanterns]').forEach(box=>{
 
 /* letter-by-letter writing */
 document.querySelectorAll('.type').forEach(el=>{
-  const t=el.textContent;el.setAttribute('aria-label',t);el.textContent='';
-  [...t].forEach((c,i)=>{const s=document.createElement('span');s.className='ch';s.setAttribute('aria-hidden','true');s.textContent=c;s.style.animationDelay=(i*.08+.2)+'s';el.appendChild(s)});
+  const at=parseFloat(el.dataset.at||0);let i=0;
+  if(!el.closest('[aria-hidden="true"]'))el.setAttribute('aria-label',el.textContent.trim());
+  [...el.childNodes].forEach(n=>{
+    if(n.nodeType===1){n.classList.add('ch');n.style.animationDelay=(at+i++*.08+.2)+'s';return}
+    const f=document.createDocumentFragment();
+    [...n.textContent].forEach(c=>{const s=document.createElement('span');s.className='ch';s.setAttribute('aria-hidden','true');s.textContent=c;s.style.animationDelay=(at+i++*.08+.2)+'s';f.appendChild(s)});
+    n.replaceWith(f);
+  });
 });
 document.querySelectorAll('.seq').forEach(g=>[...g.children].forEach((c,i)=>c.style.setProperty('--i',i)));
 
