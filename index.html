@@ -196,6 +196,8 @@ button{font:inherit;cursor:pointer}
 .scratch-hint{font-size:16px;font-style:italic;color:#8e5a1a;margin-top:.35em}
 /* tap hints */
 .taphint{margin-top:1em;font-size:16px;font-style:italic;opacity:.85;display:inline-flex;align-items:center;gap:10px}
+.haldi .taphint{font-size:22px;font-weight:600;opacity:1;color:#8a5200;margin-top:1.1em;padding:9px 22px;border:1.5px dashed #e0a400;border-radius:999px;background:rgba(242,183,5,.2);box-shadow:0 0 22px rgba(242,183,5,.35)}
+.haldi .taphint i{width:18px;height:18px}
 .taphint i{width:14px;height:14px;border-radius:50%;border:2px solid currentColor;position:relative;flex:none}
 .taphint i::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid currentColor;animation:ping 1.6s ease-out infinite}
 @keyframes ping{to{transform:scale(2.4);opacity:0}}
@@ -276,10 +278,10 @@ button{font:inherit;cursor:pointer}
       <p class="lead"><strong>Shrimati Mala Rani<br>and Devki Nandan</strong><br>request the pleasure of your company at the wedding of their grandson</p>
     </div>
     <h1 class="couple">
-      <span class="sr">Yash, son of Mrs. Shweta and Deepak, and Mansi, daughter of Mrs. Monica and Mukesh</span>
-      <span class="partner" aria-hidden="true"><span class="script names type" data-at=".9">Yash</span><span class="parents rise" style="--d:1.7s">son of<strong>Mrs. Shweta and Deepak</strong></span></span>
+      <span class="sr">Yash, son of Mrs. Shweta and Mr. Deepak, and Mansi, daughter of Mrs. Monika and Mr. Mukesh</span>
+      <span class="partner" aria-hidden="true"><span class="script names type" data-at=".9">Yash</span><span class="parents rise" style="--d:1.7s">son of<strong>Mrs. Shweta and Mr. Deepak</strong></span></span>
       <span class="amp script rise" aria-hidden="true" style="--d:2s">&amp;</span>
-      <span class="partner" aria-hidden="true"><span class="script names type" data-at="2">Mansi</span><span class="parents rise" style="--d:2.9s">daughter of<strong>Mrs. Monica and Mukesh</strong></span></span>
+      <span class="partner" aria-hidden="true"><span class="script names type" data-at="2">Mansi</span><span class="parents rise" style="--d:2.9s">daughter of<strong>Mrs. Monika and Mr. Mukesh</strong></span></span>
     </h1>
     <div class="seq late">
       <div><div class="scratch" id="scratch"><p class="when">24 &amp; 25 October 2026</p><canvas tabindex="0" aria-label="Gold foil. Scratch it, or press Enter, to reveal the dates"></canvas></div><p class="scratch-hint" id="scratchHint">Scratch the gold to reveal the dates</p></div>
@@ -356,7 +358,7 @@ button{font:inherit;cursor:pointer}
       <p><a class="map" href="https://www.google.com/maps/place/Rajputana+Resort+Hotel+%26+Restaurant/@29.3157981,78.5389376,17z/data=!3m1!4b1!4m9!3m8!1s0x390bc9c07c5ce7a5:0x3a2d13f7d9756096!5m2!4m1!1i2!8m2!3d29.3157981!4d78.5389376!16s%2Fg%2F11csrksy6c" target="_blank" rel="noopener">Get directions</a><a class="map" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Rang+De+Mohe+%28Haldi%29+%C2%B7+Yash+%26+Mansi&amp;dates=20261025T053000Z%2F20261025T083000Z&amp;location=Rajputana+Resort%2C+Kalagarh+Road%2C+Dhampur&amp;details=With+love+from+the+Mittal+family.+%23%E0%A4%86YashMan+%E0%A4%AD%E0%A4%B5%3A" target="_blank" rel="noopener">Add to calendar</a></p>
       <p class="note">Turmeric, marigolds and a lot of laughter as we begin the celebrations.</p>
       <p class="dress">Dress code: pastel colours, please avoid pink</p>
-      <div><div class="player" data-song="haldi"><button aria-label="Play the haldi tune"></button><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="label">Haldi tune<br><em>folk claps and flute</em></div></div></div>
+      <div><div class="player" data-song="haldi"><button aria-label="Play the haldi tune"></button><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="label">Haldi tune<br><em>dhol, claps and flute</em></div></div></div>
       <div><p class="taphint"><i aria-hidden="true"></i>Tap anywhere to throw some haldi</p></div>
     </div>
   </div>
@@ -429,7 +431,7 @@ button{font:inherit;cursor:pointer}
       <div class="rsvp">
         <p class="rsvp-h">RSVP</p>
         <p class="rsvp-sub">Awaiting your presence</p>
-        <p class="rsvp-names">Devki Nandan, Shiv Kumar<br>Yogendra Kumar, Roshan Lal<br>Gopal Jain<br>Shweta &ndash; Deepak<br>Pragya &ndash; Pradeep<br>Nupur &ndash; Amit</p>
+        <p class="rsvp-names">Devki Nandan, Shiv Kumar<br>Yogendra Kumar, Roshan Lal<br>Gopal<br>Shweta &ndash; Deepak<br>Pragya &ndash; Pradeep<br>Nupur &ndash; Amit</p>
         <p class="rsvp-home">Residence: Khatiyan Street, Dhampur (Bijnor)</p>
         <p class="rsvp-tel"><a class="map" href="tel:+919557036676">Call 95570 36676</a><a class="map" href="tel:+919897744131">Call 98977 44131</a></p>
       </div>
@@ -620,6 +622,29 @@ function tone(t,m,d,{type='sine',vol=.2,vib=0,att=.02,bend=0}={}){
   o.connect(f);f.connect(g);g.connect(master);o.start(t);o.stop(t+d+.3);
 }
 function drum(t,kind){
+  if(kind.includes('+')){kind.split('+').forEach(k=>drum(t,k));return}
+  if(kind==='dhol'){                       /* dhol bass side: deep boom with a falling pitch */
+    const o=ac.createOscillator(),o2=ac.createOscillator(),g=ac.createGain(),g2=ac.createGain();
+    o.frequency.setValueAtTime(118,t);o.frequency.exponentialRampToValueAtTime(46,t+.32);
+    o2.type='triangle';o2.frequency.setValueAtTime(190,t);o2.frequency.exponentialRampToValueAtTime(80,t+.12);
+    g.gain.setValueAtTime(.95,t);g.gain.exponentialRampToValueAtTime(.001,t+.55);
+    g2.gain.setValueAtTime(.3,t);g2.gain.exponentialRampToValueAtTime(.001,t+.14);
+    o.connect(g);o2.connect(g2);g.connect(master);g2.connect(master);o.start(t);o.stop(t+.6);o2.start(t);o2.stop(t+.2);
+    const b=ac.createBuffer(1,ac.sampleRate*.05,ac.sampleRate),d=b.getChannelData(0);
+    for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,2);
+    const n=ac.createBufferSource(),f=ac.createBiquadFilter(),gn=ac.createGain();
+    f.type='lowpass';f.frequency.value=900;gn.gain.value=.35;n.buffer=b;n.connect(f);f.connect(gn);gn.connect(master);n.start(t);
+    return;
+  }
+  if(kind==='tik'){                        /* dhol treble side: the thin cane stick */
+    const b=ac.createBuffer(1,ac.sampleRate*.045,ac.sampleRate),d=b.getChannelData(0);
+    for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,4);
+    const n=ac.createBufferSource(),f=ac.createBiquadFilter(),g=ac.createGain();
+    f.type='bandpass';f.frequency.value=3000;f.Q.value=1.4;g.gain.value=.5;n.buffer=b;n.connect(f);f.connect(g);g.connect(master);n.start(t);
+    const o=ac.createOscillator(),go=ac.createGain();o.frequency.value=560;
+    go.gain.setValueAtTime(.16,t);go.gain.exponentialRampToValueAtTime(.001,t+.07);o.connect(go);go.connect(master);o.start(t);o.stop(t+.09);
+    return;
+  }
   if(kind==='dha'||kind==='ge'){
     const o=ac.createOscillator(),g=ac.createGain();
     o.frequency.setValueAtTime(kind==='dha'?140:110,t);o.frequency.exponentialRampToValueAtTime(55,t+.25);
@@ -641,7 +666,7 @@ const SONGS={
     mel:[[0,74,2],[2,76,2],[4,78,4],[8,76,2],[10,74,2],[12,71,4],[16,74,2],[18,78,2],[20,79,3],[23,78,1],[24,76,4],[28,74,4]],
     voice:{type:'triangle',vol:.16,vib:4,bend:1}, bass:[[0,50],[16,45]]},
   haldi:{bpm:118,len:32,
-    beat:['clap',0,0,'clap',0,0,'clap',0,'dha',0,'clap',0,'clap',0,'na',0],
+    beat:['dhol',0,'tik','dhol','tik+clap',0,'dhol','tik','dhol',0,'tik','dhol','tik+clap','tik','dhol','tik'],
     mel:[[0,79,2],[2,81,2],[4,83,2],[6,81,2],[8,79,4],[12,76,4],[16,78,2],[18,79,2],[20,81,2],[22,79,2],[24,78,3],[27,76,1],[28,74,4]],
     voice:{type:'sine',vol:.18,vib:3,bend:.5}, bass:[[0,55],[16,50]]},
   wedding:{bpm:64,len:32,
